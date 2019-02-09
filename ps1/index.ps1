@@ -1,4 +1,3 @@
-set-executionpolicy remotesigned -s currentuser -f
 # 配置项
 $GitUserName = "FloatingShuYin"
 $GitEmail = "floatshuyin@gmail.com"
@@ -19,9 +18,9 @@ echo '--------------Install Scoop done!--------------------------'
 
 # Multi-connection downloads with aria2
 echo '--------------Install sudo 7zip aria2 git...----------------------'
-scoop install sudo
-sudo scoop install 7zip git --global
 scoop install aria2
+scoop install sudo
+scoop install git
 echo '--------------Install sudo 7zip aria2 git done!----------------------'
 
 # add git ssh

@@ -1,5 +1,4 @@
-﻿chcp 65001
-@echo off
+﻿@echo off
 set "cerrent=%~dp0%"
 cacls.exe "%SystemDrive%\System Volume Information" >nul 2>nul
 if %errorlevel%==0 goto Admin
@@ -16,7 +15,6 @@ rem 运行index.ps1
 powershell -file "%cerrent%\ps1\index.ps1"
 powershell -file "%cerrent%\ps1\nvm.ps1"
 rem 注入注册表
-start "" "%cerrent%\reg\utf-8.reg"
 start "" "%cerrent%\reg\开机时开启小键盘.reg"
 start "" "%cerrent%\reg\隐藏资源管理器左侧的6个文件夹"
 start "" "%cerrent%\reg\右键添加管理员取得所有权.reg"

@@ -1,32 +1,6 @@
 ## 安装
 直接Download Zip到本地并解压
 
-## 目录结构
-```tree
-│   REDEME.md
-│   start.bat
-│
-├───bat
-│       关闭驱动签名认证.bat
-│       刷新dns缓存.bat
-│       开启驱动签名认证.bat
-│       恢复箭头.bat
-│       消除箭头.bat
-│       网络重置.bat
-│       重启桌面.bat
-│
-├───ps1
-│       index.ps1
-│
-└───reg
-        utf-8.reg
-        关闭蓝牙套件的大小写切换提示.reg
-        右键添加管理员取得所有权.reg
-        开机时开启小键盘.reg
-        显示资源管理器左侧的6个文件夹.reg
-        隐藏资源管理器左侧的6个文件夹.reg
-```
-
 ## 个性化
 请先阅读[Scoop](https://github.com/lukesampson/scoop)文档
 
@@ -42,8 +16,11 @@ $ScoopGlobalDir = $SystemDriveLetter + "Support"
 其他则可按需增删
 
 ## 运行
-- Win + X + I -> `set-executionpolicy remotesigned -s currentuser -f`
-- 双击`start.bat`
+- Win + X + A -> `set-executionpolicy remotesigned -s currentuser -f`
+- 执行utf-8.reg
+- Win + R -> `rundll32.exe shell32.dll,Control_RunDLL intl.cpl,,0` -> 管理 -> 更改系统区域设置 -> 勾选 Beta版:使用UTF-8
+- 重启
+- Win + X + A -> cd 至项目目录 -> start.bat
 
 ## 错误处理
 
