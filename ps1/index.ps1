@@ -1,29 +1,30 @@
-set-executionpolicy remotesigned -s currentuser -f
-# 配置项
-$SystemDriveLetter = $env:windir.replace("Windows", "")
-$ScoopInstallDir = $SystemDriveLetter + "Support\Scoop"
-$ScoopGlobalDir = $SystemDriveLetter + "\Scoop"
+param($Directory)
+
+$CONF = (Get-Content $Directory\config.json) | ConvertFrom-Json
+$ScoopInstallDir = $CONF.ScoopInstallDir
+$ScoopGlobalDir = $CONF.ScoopGlobalDir
 
 # Install Scoop to a Custom Directory
-echo '--------------Install Scoop...----------------------'
+Write-Host "Install Scoop to $ScoopInstallDir" -Foreground "Cyan"
 [environment]::setEnvironmentVariable('SCOOP', $ScoopInstallDir, 'User')
 $env:SCOOP = $ScoopInstallDir
 iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
 
 # Configure Scoop to install global programs to a Custom Directory
+Write-Host "Configure Scoop to install global programs to $ScoopGlobalDir" -Foreground "Cyan"
 [environment]::setEnvironmentVariable('SCOOP_GLOBAL', $ScoopGlobalDir, 'Machine')
 $env:SCOOP_GLOBAL = $ScoopGlobalDir
-echo '--------------Install Scoop done!--------------------------'
+
+Write-Host "Scoop install Done!" -Foreground "Cyan"
+Write-Host "install base env" -Foreground "Cyan"
 
 # Multi-connection downloads with aria2
-echo '--------------Install sudo 7zip aria2 git...----------------------'
 scoop install aria2
+# install base env
 scoop install sudo
-sudo scoop install 7zip git openssh --global
-echo '--------------Install sudo 7zip aria2 git done!----------------------'
-[environment]::setenvironmentvariable('GIT_SSH', (resolve-path (scoop which ssh)), 'USER')
-
-
+sudo scoop install 7zip git --global
+Write-Host "install base env Done!" -Foreground "Cyan"
+Read-Host "Wait..."
 
 
 

@@ -1,56 +1,21 @@
-## 安装
+﻿## 安装
 直接Download Zip到本地并解压
 
 ## 个性化
 请先阅读[Scoop](https://github.com/lukesampson/scoop)文档
 
-必须要修改的四个变量在ps1目录下的index.ps1中:
-```powershell
-# 配置变量
-$GitUserName = "FloatingShuYin"
-$GitEmail = "floatshuyin@gmail.com"
-$SystemDriveLetter = $env:windir.replace("Windows", "")
-$ScoopInstallDir = $SystemDriveLetter + "Support\Scoop"
-$ScoopGlobalDir = $SystemDriveLetter + "Support"
+必要的四个变量在根目录下的config.json中:
+```json
+{
+  "GitUserName": "FloatingShuYin",
+  "GitEmail ": "floatshuyin@gmail.com",
+  "ScoopInstallDir": "S:\Support\Scoop",
+  "ScoopGlobalDir": "S:\Scoop"
+}
 ```
-其他则可按需增删
-
 ## 运行
 - Win + X + A -> `set-executionpolicy remotesigned -s currentuser -f`
-- 项目目录新建 start.bat 粘贴以下内容, 保存后执行
-
-```bat
-@echo off
-set "cerrent=%~dp0%"
-cacls.exe "%SystemDrive%\System Volume Information" >nul 2>nul
-if %errorlevel%==0 goto Admin
-if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
-echo Set RequestUAC = CreateObject^("Shell.Application"^)>"%temp%\getadmin.vbs"
-echo RequestUAC.ShellExecute "%~s0","","","runas",1 >>"%temp%\getadmin.vbs"
-echo WScript.Quit >>"%temp%\getadmin.vbs"
-"%temp%\getadmin.vbs" /f
-if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
-exit
-
-:Admin
-chcp 936
-rem 运行index.ps1
-powershell -file "%cerrent%\ps1\index.ps1"
-powershell -file "%cerrent%\ps1\git.ps1"
-powershell -file "%cerrent%\ps1\app.ps1"
-powershell -file "%cerrent%\ps1\nvm.ps1"
-rem 注入注册表
-start "" "%cerrent%\reg\utf-8.reg"
-start "" "%cerrent%\reg\开机时开启小键盘.reg"
-start "" "%cerrent%\reg\隐藏资源管理器左侧的6个文件夹"
-start "" "%cerrent%\reg\右键添加管理员取得所有权.reg"
-rem 批处理
-start "" "%cerrent%\bat\消除箭头.bat"
-rundll32.exe shell32.dll,Control_RunDLL intl.cpl,,0
-pause
-exit
-
-```
+-  双击start.bat
 ## 错误处理
 
 ### 环境变量错误
@@ -74,12 +39,10 @@ scoop uninstall xxx
 scoop install xxx
 ```
 
-**(建议)**也可以选择清空,重新跑一次,重跑如下:
-1. 终端执行
-```powershell
-scoop uninstall scoop
-```
-2. 项目目录执行
-重新执行`start.bat`
+也可以选择清空,重新跑一次,重跑如下:
+
+1.双击 `clear.bat`
+2. 双击 `start.bat`
+
 
 
