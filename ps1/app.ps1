@@ -9,7 +9,6 @@ echo '--------------Install app...----------------------'
 
 
 # nodejs varsion management
-scoop install sudo
 sudo scoop install python35 --global
 sudo scoop install ruby --global
 sudo scoop install autohotkey-installer --global
