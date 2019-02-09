@@ -17,11 +17,40 @@ $ScoopGlobalDir = $SystemDriveLetter + "Support"
 
 ## 运行
 - Win + X + A -> `set-executionpolicy remotesigned -s currentuser -f`
-- 执行utf-8.reg
-- Win + R -> `rundll32.exe shell32.dll,Control_RunDLL intl.cpl,,0` -> 管理 -> 更改系统区域设置 -> 勾选 Beta版:使用UTF-8
-- 重启
-- Win + X + A -> cd 至项目目录 -> start.bat
+- 项目目录新建 start.bat 粘贴以下内容, 保存后执行
 
+```bat
+@echo off
+set "cerrent=%~dp0%"
+cacls.exe "%SystemDrive%\System Volume Information" >nul 2>nul
+if %errorlevel%==0 goto Admin
+if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
+echo Set RequestUAC = CreateObject^("Shell.Application"^)>"%temp%\getadmin.vbs"
+echo RequestUAC.ShellExecute "%~s0","","","runas",1 >>"%temp%\getadmin.vbs"
+echo WScript.Quit >>"%temp%\getadmin.vbs"
+"%temp%\getadmin.vbs" /f
+if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
+exit
+
+:Admin
+chcp 936
+rem 运行index.ps1
+powershell -file "%cerrent%\ps1\index.ps1"
+powershell -file "%cerrent%\ps1\git.ps1"
+powershell -file "%cerrent%\ps1\app.ps1"
+powershell -file "%cerrent%\ps1\nvm.ps1"
+rem 注入注册表
+start "" "%cerrent%\reg\utf-8.reg"
+start "" "%cerrent%\reg\开机时开启小键盘.reg"
+start "" "%cerrent%\reg\隐藏资源管理器左侧的6个文件夹"
+start "" "%cerrent%\reg\右键添加管理员取得所有权.reg"
+rem 批处理
+start "" "%cerrent%\bat\消除箭头.bat"
+rundll32.exe shell32.dll,Control_RunDLL intl.cpl,,0
+pause
+exit
+
+```
 ## 错误处理
 
 ### 环境变量错误

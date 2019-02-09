@@ -1,3 +1,4 @@
+set-executionpolicy remotesigned -s currentuser -f
 chcp 936
 $GitUserName = "FloatingShuYin"
 $GitEmail = "floatshuyin@gmail.com"

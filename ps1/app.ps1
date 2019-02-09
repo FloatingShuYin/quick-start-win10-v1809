@@ -1,3 +1,4 @@
+set-executionpolicy remotesigned -s currentuser -f
 # add buckets
 echo '--------------add buckets...!----------------------'
 scoop bucket add extras

@@ -1,3 +1,4 @@
+set-executionpolicy remotesigned -s currentuser -f
 # 配置项
 $SystemDriveLetter = $env:windir.replace("Windows", "")
 $ScoopInstallDir = $SystemDriveLetter + "Support\Scoop"
@@ -19,7 +20,8 @@ echo '--------------Install sudo 7zip aria2 git...----------------------'
 scoop install aria2
 scoop install git
 echo '--------------Install sudo 7zip aria2 git done!----------------------'
-
+scoop install openssh
+[environment]::setenvironmentvariable('GIT_SSH', (resolve-path (scoop which ssh)), 'USER')
 
 
 
