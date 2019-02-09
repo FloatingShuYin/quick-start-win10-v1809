@@ -42,6 +42,7 @@ $ScoopGlobalDir = $SystemDriveLetter + "Support"
 其他则可按需增删
 
 ## 运行
+- Win + X + A -> `set-executionpolicy remotesigned -s currentuser -f`
 - 双击`start.bat`
 
 ## 错误处理

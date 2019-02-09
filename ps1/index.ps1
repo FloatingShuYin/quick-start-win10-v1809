@@ -61,9 +61,6 @@ sudo scoop install python35 --global
 sudo scoop install ruby --global
 sudo scoop install autohotkey-installer --global
 sudo scoop install nvm --global
-nvm install 8.11.4
-nvm use 8.11.4
-npm i yarn -g
 # makedown编辑器
 scoop install typora
 # 截图工具

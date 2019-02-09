@@ -11,9 +11,9 @@ if exist "%temp%\getadmin.vbs" del /f /q "%temp%\getadmin.vbs"
 exit
 
 :Admin
-rem 设置执行策略
-powershell set-executionpolicy remotesigned -s currentuser -f
+rem 运行index.ps1
 powershell -file "%cerrent%\ps1\index.ps1"
+powershell -file "%cerrent%\ps1\nvm.ps1"
 rem 注入注册表
 start "" "%cerrent%\reg\utf-8.reg"
 start "" "%cerrent%\reg\开机时开启小键盘.reg"
