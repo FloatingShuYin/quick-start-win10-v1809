@@ -19,7 +19,6 @@ echo '--------------Install Scoop done!--------------------------'
 # Multi-connection downloads with aria2
 echo '--------------Install sudo 7zip aria2 git...----------------------'
 scoop install aria2
-scoop install sudo
 scoop install git
 echo '--------------Install sudo 7zip aria2 git done!----------------------'
 
@@ -57,6 +56,7 @@ echo '--------------Install app...----------------------'
 
 
 # nodejs varsion management
+scoop install sudo
 sudo scoop install python35 --global
 sudo scoop install ruby --global
 sudo scoop install autohotkey-installer --global
