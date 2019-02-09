@@ -1,3 +1,4 @@
+set-executionpolicy remotesigned -s currentuser -f
 # 配置项
 $GitUserName = "FloatingShuYin"
 $GitEmail = "floatshuyin@gmail.com"

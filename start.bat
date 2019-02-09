@@ -1,4 +1,5 @@
-﻿@echo off
+﻿chcp 65001
+@echo off
 set "cerrent=%~dp0%"
 cacls.exe "%SystemDrive%\System Volume Information" >nul 2>nul
 if %errorlevel%==0 goto Admin
