@@ -1,0 +1,34 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\runas]
+@="管理员取得所有权"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\*\shell\runas\Command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="管理员取得所有权"
+"NoWorkingDirectory"=""
+[HKEY_CLASSES_ROOT\Directory\shell\runas\Command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+[HKEY_CLASSES_ROOT\exefile\shell\TakeAuthority]
+@="管理员取得所有权"
+[HKEY_CLASSES_ROOT\exefile\shell\TakeAuthority\Command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\runas]
+@="管理员取得所有权"
+"NoWorkingDirectory"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\runas\Command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\runas]
+@="管理员取得所有权"
+"NoWorkingDirectory"=""
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\runas\Command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\exefile\shell\TakeAuthority]
+@="管理员取得所有权"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\exefile\shell\TakeAuthority\Command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
