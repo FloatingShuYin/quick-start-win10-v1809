@@ -6,4 +6,3 @@ node -v | Out-String -Stream
 npm -v | Out-String -Stream
 npm i yarn -g | Out-String -Stream
 Write-Host "install node Done!" -Foreground "Cyan"
-Read-Host "Wait..."

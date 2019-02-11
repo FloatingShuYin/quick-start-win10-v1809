@@ -3,8 +3,7 @@ param($Directory)
 $CONF = (Get-Content $Directory\config.json) | ConvertFrom-Json
 $ScoopInstallDir = $CONF.ScoopInstallDir
 $ScoopGlobalDir = $CONF.ScoopGlobalDir
-echo $ScoopInstallDir
-echo $ScoopGlobalDir
+
 Write-Host "clean" -Foreground "Cyan"
 if (Test-Path $ScoopInstallDir) {
  del $ScoopInstallDir -force

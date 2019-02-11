@@ -7,10 +7,27 @@
 必要的四个变量在根目录下的config.json中:
 ```json
 {
-  "GitUserName": "FloatingShuYin",
-  "GitEmail ": "floatshuyin@gmail.com",
-  "ScoopInstallDir": "S:\Support\Scoop",
-  "ScoopGlobalDir": "S:\Scoop"
+	"GitUserName": "FloatingShuYin",
+	"GitEmail": "floatshuyin@gmail.com",
+	"ScoopInstallDir": "S:\\Support\\Scoop",
+	"ScoopGlobalDir": "S:\\Scoop",
+	"Buckets": ["extras","versions"],
+	"GlobalApps": [
+		"nuget",
+		"nvm",
+		"python35",
+		"ruby"
+	],
+	"Apps": [
+		"autohotkey-installer",
+		"concfg",
+		"rainmeter",
+		"shadowsocks",
+		"snipaste",
+		"steam",
+		"vscode-portable",
+		"wox"
+	]
 }
 ```
 ## 运行

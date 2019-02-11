@@ -1,30 +1,20 @@
-param($Directory)
+param($currentDir)
+$json = (Get-Content $currentDir\config.json) | ConvertFrom-Json
+Add-Member -InputObject $json -Name currentDir -Value $currentDir -MemberType NoteProperty
+$json | ConvertTo-Json | Set-Clipboard
 
-$CONF = (Get-Content $Directory\config.json) | ConvertFrom-Json
-$ScoopInstallDir = $CONF.ScoopInstallDir
-$ScoopGlobalDir = $CONF.ScoopGlobalDir
+# powershell -noprofile -ex unrestricted -file "$Directory\ps1\installScoop.ps1"
+powershell -noprofile -ex unrestricted -file "$currentDir\ps1\installBaseEnv.ps1"
+powershell -noprofile -ex unrestricted -file "$currentDir\ps1\setGitSsh.ps1"
+powershell -noprofile -ex unrestricted -file "$currentDir\ps1\addBuckets.ps1"
+powershell -noprofile -ex unrestricted -file "$currentDir\ps1\installApps.ps1"
+powershell -noprofile -ex unrestricted -file "$currentDir\ps1\installNode.ps1"
 
-# Install Scoop to a Custom Directory
-Write-Host "Install Scoop to $ScoopInstallDir" -Foreground "Cyan"
-[environment]::setEnvironmentVariable('SCOOP', $ScoopInstallDir, 'User')
-$env:SCOOP = $ScoopInstallDir
-iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
-
-# Configure Scoop to install global programs to a Custom Directory
-Write-Host "Configure Scoop to install global programs to $ScoopGlobalDir" -Foreground "Cyan"
-[environment]::setEnvironmentVariable('SCOOP_GLOBAL', $ScoopGlobalDir, 'Machine')
-$env:SCOOP_GLOBAL = $ScoopGlobalDir
-
-Write-Host "Scoop install Done!" -Foreground "Cyan"
-Write-Host "install base env" -Foreground "Cyan"
-
-# Multi-connection downloads with aria2
-scoop install aria2
-# install base env
-scoop install sudo
-sudo scoop install 7zip git --global
-Write-Host "install base env Done!" -Foreground "Cyan"
+Write-Host "open webpage" -Foreground "Cyan"
+start "http://pandownload.com/"
+start "https://www.freedownloadmanager.org/"
+start "https://pan.baidu.com/"
+start "https://www.listary.com/"
+start "https://potplayer.en.softonic.com/"
+Write-Host "open webpage Done!" -Foreground "Cyan"
 Read-Host "Wait..."
-
-
-
