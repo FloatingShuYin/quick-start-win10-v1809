@@ -1,5 +1,5 @@
 ﻿## 安装
-直接Download Zip到本地并解压
+下载 releases 中的 Zip 文件到本地并解压
 
 ## 个性化
 请先阅读[Scoop](https://github.com/lukesampson/scoop)文档
