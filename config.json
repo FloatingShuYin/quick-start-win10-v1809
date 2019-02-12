@@ -5,15 +5,19 @@
 	"ScoopGlobalDir": "S:\\Scoop",
 	"OpenWebPages": [
 		"https://www.google.cn/chrome/",
+		"https://www.freedownloadmanager.org/zh/download.htm",
 		"https://github.com/",
-		"https://app.keeweb.info/"
+		"https://app.keeweb.info/",
+		"https://codecpack.co/download/PotPlayer.html",
+		"http://pandownload.com/"
 	],
-	"Buckets": ["extras","versions"],
+	"Buckets": ["extras", "versions", "nerd-fonts"],
 	"GlobalApps": [
 		"nuget",
 		"nvm",
 		"python35",
-		"ruby"
+		"ruby",
+		"FiraCode-NF"
 	],
 	"Apps": [
 		"autohotkey-installer",
@@ -34,6 +38,6 @@
 		"消除箭头.bat"
 	],
 	"Mods": {
-		"powershell": ["installNode.ps1", "installWoxTheme.ps1"]
+		"powershell": ["aboutNode.ps1", "aboutWox.ps1"]
 	}
 }

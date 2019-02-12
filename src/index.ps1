@@ -20,12 +20,3 @@ foreach ($item in $json.Mods)
       powershell -noprofile -ex unrestricted -file "$currentDir\mod\$ps1" $currentDir
     }
 }
-
-Write-Host "open webpage" -Foreground "Cyan"
-start "http://pandownload.com/"
-start "https://www.freedownloadmanager.org/"
-start "https://pan.baidu.com/"
-start "https://www.listary.com/"
-start "https://potplayer.en.softonic.com/"
-Write-Host "open webpage Done!" -Foreground "Cyan"
-Read-Host "Wait..."
