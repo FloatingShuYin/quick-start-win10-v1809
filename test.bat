@@ -1,4 +1,4 @@
-@echo off
+Ôªø@echo off
 set "cerrent=%~dp0%"
 cacls.exe "%SystemDrive%\System Volume Information" >nul 2>nul
 if %errorlevel%==0 goto Admin
@@ -12,7 +12,7 @@ exit
 
 :Admin
 chcp 936
-rem ‘À––powershell
-powershell -noprofile -ex unrestricted -file "%cerrent%src\ps1\clean.ps1" %cerrent%
+rem ËøêË°åpowershell
+powershell -noprofile -ex unrestricted -file "%cerrent%test.ps1" %cerrent%
 pause
 exit

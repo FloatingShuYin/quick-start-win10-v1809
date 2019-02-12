@@ -3,6 +3,11 @@
 	"GitEmail": "floatshuyin@gmail.com",
 	"ScoopInstallDir": "S:\\Support\\Scoop",
 	"ScoopGlobalDir": "S:\\Scoop",
+	"OpenWebPages": [
+		"https://www.google.cn/chrome/",
+		"https://github.com/",
+		"https://app.keeweb.info/"
+	],
 	"Buckets": ["extras","versions"],
 	"GlobalApps": [
 		"nuget",
@@ -18,6 +23,17 @@
 		"snipaste",
 		"steam",
 		"vscode-portable",
-		"wox"
-	]
+		"wox",
+		"bandizip"
+	],
+	"RegistryAndBat": [
+		"utf-8.reg",
+		"开机时开启小键盘.reg",
+		"隐藏资源管理器左侧的6个文件夹.reg",
+		"右键添加管理员取得所有权.reg",
+		"消除箭头.bat"
+	],
+	"Mods": {
+		"powershell": ["installNode.ps1", "installWoxTheme.ps1"]
+	}
 }

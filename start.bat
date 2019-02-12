@@ -13,13 +13,6 @@ exit
 :Admin
 chcp 936
 rem 运行powershell
-powershell -noprofile -ex unrestricted -file "%cerrent%\ps1\index.ps1" %cerrent%
-rem 注入注册表
-start /b /wait "" "%cerrent%\reg\utf-8.reg"
-start /b /wait "" "%cerrent%\reg\开机时开启小键盘.reg"
-start /b /wait "" "%cerrent%\reg\隐藏资源管理器左侧的6个文件夹.reg"
-start /b /wait "" "%cerrent%\reg\右键添加管理员取得所有权.reg"
-rem 批处理
-start /wait "" "%cerrent%\bat\消除箭头.bat"
+powershell -noprofile -ex unrestricted -file "%cerrent%src\index.ps1" %cerrent%
 pause
 exit
