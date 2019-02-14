@@ -28,7 +28,13 @@
 		"steam",
 		"vscode-portable",
 		"wox",
-		"bandizip"
+		"bandizip",
+		"quicklook",
+		"switchhosts",
+		"typora",
+		"webtorrent",
+		"honeyview",
+		"concfg"
 	],
 	"RegistryAndBat": [
 		"utf-8.reg",
@@ -37,7 +43,15 @@
 		"右键添加管理员取得所有权.reg",
 		"消除箭头.bat"
 	],
+	"RunAtBoot": [
+		"Everything",
+		"Wox",
+		"QuickLook",
+		"Rainmeter",
+		"Shadowsocks",
+		"Snipaste"
+	],
 	"Mods": {
-		"powershell": ["aboutNode.ps1", "aboutWox.ps1"]
+		"powershell": ["aboutNode.ps1", "aboutWox.ps1", "aboutGitBash.ps1","aboutRainmeter.ps1"]
 	}
 }
