@@ -6,13 +6,13 @@ Add-Member -InputObject $json -Name tempDir -Value $tempDir -MemberType NoteProp
 $json | ConvertTo-Json | Out-File "$currentDir\temp.json"
 
 powershell -noprofile -ex unrestricted -file "$currentDir\src\ps1\openWebPage.ps1" $currentDir
-# powershell -noprofile -ex unrestricted -file "$currentDir\src\ps1\installScoop.ps1" $currentDir
+powershell -noprofile -ex unrestricted -file "$currentDir\src\ps1\installScoop.ps1" $currentDir
 powershell -noprofile -ex unrestricted -file "$currentDir\src\ps1\installBaseEnv.ps1" $currentDir
 powershell -noprofile -ex unrestricted -file "$currentDir\src\ps1\setGitSsh.ps1" $currentDir
 powershell -noprofile -ex unrestricted -file "$currentDir\src\ps1\addBuckets.ps1" $currentDir
 powershell -noprofile -ex unrestricted -file "$currentDir\src\ps1\installApps.ps1" $currentDir
 powershell -noprofile -ex unrestricted -file "$currentDir\src\ps1\injectRegistry.ps1" $currentDir
-
+powershell -noprofile -ex unrestricted -file "$currentDir\src\ps1\RunAtBoot.ps1" $currentDir
 foreach ($item in $json.Mods)
 {
     foreach ($ps1 in $item.powershell){
