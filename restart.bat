@@ -14,6 +14,7 @@ exit
 chcp 936
 rem ‘À––powershell
 powershell set-executionpolicy remotesigned -s currentuser -f
+start /b /wait powershell -noprofile -ex unrestricted -file "%currentDir%\src\clean.ps1" %currentDir%
 start /b /wait powershell -noprofile -ex bypass -file "%currentDir%\src\index.ps1" %currentDir%
 start /b /wait powershell -noprofile -ex bypass -file "%currentDir%\src\openWebPage.ps1" %currentDir%
 start /b /wait powershell -noprofile -ex RemoteSigned -file "%currentDir%\src\installScoop.ps1" %currentDir%
