@@ -8,12 +8,16 @@ foreach ($item in $json.GlobalApps)
     $cmd = [scriptblock]::Create("sudo scoop install $item --global")
     Start-Job -ScriptBlock $cmd
 }
+start taskmgr
+Get-Job | Wait-Job | Receive-Job | Out-String -Stream
 foreach ($item in $json.Apps)
 {
     $item
-    $cmd = [scriptblock]::Create("scoop install $item")
-    Start-Job -ScriptBlock $cmd
+    # $cmd = [scriptblock]::Create("scoop install $item")
+    # Start-Job -ScriptBlock $cmd
+    Start-Process -FilePath "cmd.exe" -ArgumentList "/k","scoop install $item"
 
 }
-Get-Job | Wait-Job | Receive-Job
+Get-Job | Wait-Job | Receive-Job | Out-String -Stream
 
+Read-Host "..."
