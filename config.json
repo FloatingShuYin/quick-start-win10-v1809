@@ -52,6 +52,6 @@
 		"Snipaste"
 	],
 	"Mods": {
-		"powershell": ["aboutNode.ps1", "aboutWox.ps1", "aboutGitBash.ps1","aboutRainmeter.ps1"]
+		"powershell": ["aboutNode", "aboutWox", "aboutGitBash", "aboutRainmeter", "aboutCmder"]
 	}
 }

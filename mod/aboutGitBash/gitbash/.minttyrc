@@ -21,4 +21,5 @@ OpaqueWhenFocused=no
 CursorBlinks=yes
 Transparency=high
 ThemeFile=flat-ui
-Font=Fira Code
+Font=Fira Code Retina
+FontWeight=450

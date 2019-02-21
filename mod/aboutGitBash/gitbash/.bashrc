@@ -118,3 +118,5 @@ alias gm='git merge'
 alias gp='git push'
 alias gpl='git pull'
 alias gf='git fetch'
+
+alias gf='git fetch'
