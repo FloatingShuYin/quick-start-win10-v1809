@@ -13,10 +13,10 @@ exit
 :Admin
 chcp 936
 rem ‘À––powershell
-powershell set-executionpolicy remotesigned -s currentuser -f
+start /b /wait powershell set-executionpolicy remotesigned -s currentuser
 start /b /wait powershell -noprofile -ex bypass -file "%currentDir%\src\index.ps1" %currentDir%
 start /b /wait powershell -noprofile -ex bypass -file "%currentDir%\src\openWebPage.ps1" %currentDir%
-start /b /wait powershell -noprofile -ex RemoteSigned -file "%currentDir%\src\installScoop.ps1" %currentDir%
+start /b /wait powershell -noprofile -ex remotesigned -file "%currentDir%\src\installScoop.ps1" %currentDir%
 start /b /wait powershell -noprofile -ex bypass -file "%currentDir%\src\setGitSsh.ps1" %currentDir%
 start /b /wait powershell -noprofile -ex bypass -file "%currentDir%\src\addBuckets.ps1" %currentDir%
 start /b /wait powershell -noprofile -ex bypass -file "%currentDir%\src\installApps.ps1" %currentDir%

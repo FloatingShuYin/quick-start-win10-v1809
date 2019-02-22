@@ -4,12 +4,6 @@
 	"ScoopInstallDir": "C:\\Support\\Scoop",
 	"ScoopGlobalDir": "C:\\Scoop",
 	"OpenWebPages": [
-		"https://www.google.cn/chrome/",
-		"https://www.freedownloadmanager.org/zh/download.htm",
-		"https://github.com/",
-		"https://app.keeweb.info/",
-		"https://codecpack.co/download/PotPlayer.html",
-		"http://pandownload.com/"
 	],
 	"Buckets": ["extras", "versions", "nerd-fonts"],
 	"GlobalApps": [

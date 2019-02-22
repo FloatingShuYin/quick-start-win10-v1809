@@ -62,7 +62,8 @@
 ```
 ## 运行
 1. Win + X + A -> `set-executionpolicy remotesigned -s currentuser -f`
-2. 双击 `start.bat`
+2. 选中 ./src/installScoop.ps1  右键编辑 然后关闭 （获取执行权限）
+3. 双击 `start.bat`
 ## 错误处理
 
 ### 环境变量错误
