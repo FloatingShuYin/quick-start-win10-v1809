@@ -5,11 +5,12 @@ Write-Host "Install app" -Foreground "Cyan"
 foreach ($item in $json.GlobalApps)
 {
     $item
-    $cmd = [scriptblock]::Create("sudo scoop install $item --global")
-    Start-Job -ScriptBlock $cmd
+    # $cmd = [scriptblock]::Create("sudo scoop install $item --global")
+    # Start-Job -ScriptBlock $cmd
+    Start-Process -FilePath "cmd.exe" -ArgumentList "/k","sudo scoop install $item --global"
 }
 start taskmgr
-Get-Job | Wait-Job | Receive-Job | Out-String -Stream
+# Get-Job | Wait-Job | Receive-Job | Out-String -Stream
 foreach ($item in $json.Apps)
 {
     $item
@@ -18,6 +19,6 @@ foreach ($item in $json.Apps)
     Start-Process -FilePath "cmd.exe" -ArgumentList "/k","scoop install $item"
 
 }
-Get-Job | Wait-Job | Receive-Job | Out-String -Stream
+# Get-Job | Wait-Job | Receive-Job | Out-String -Stream
 
 Read-Host "..."

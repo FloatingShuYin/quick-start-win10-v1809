@@ -17,7 +17,8 @@
 		"nvm",
 		"python35",
 		"ruby",
-		"FiraCode-NF"
+		"FiraCode-NF",
+		"tldr"
 	],
 	"Apps": [
 		"autohotkey-installer",
@@ -33,8 +34,7 @@
 		"switchhosts",
 		"typora",
 		"webtorrent",
-		"honeyview",
-		"concfg"
+		"honeyview"
 	],
 	"RegistryAndBat": [
 		"utf-8.reg",
